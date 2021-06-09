@@ -77,7 +77,7 @@ const MainForm = () => {
                     </Grid>
                     <Grid item>
                         <ModTextField
-                            label="Phone no."
+                            label="Contact no."
                             value={subject}
                             onChange={handleSubject}
                         />

@@ -1,18 +1,30 @@
 import React from "react";
-import {
-    AppBar,
-    Box,
-    Button,
-    makeStyles,
-    Toolbar,
-    Typography
-} from "@material-ui/core";
+import { AppBar, Button, makeStyles, Toolbar } from "@material-ui/core";
+import full from "../../assets/full.png";
+import elite from "../../assets/Elite.png";
 const useStyles = makeStyles((theme) => ({
     grow: {
         flexGrow: 1
     },
     appBar: {
         backgroundColor: "white"
+    },
+    sectionDesktop: {
+        display: "none",
+        [theme.breakpoints.up("sm")]: {
+            display: "flex",
+            height: "10vh",
+            width: "30%",
+            marginLeft: "2w"
+        }
+    },
+    sectionMobile: {
+        display: "flex",
+        height: "7vh",
+        width: "20%",
+        [theme.breakpoints.up("sm")]: {
+            display: "none"
+        }
     }
 }));
 
@@ -22,31 +34,34 @@ const HeaderBar = () => {
         <div>
             <AppBar position="sticky" className={classes.appBar}>
                 <Toolbar>
-                    <Box
-                        style={{
-                            // backgroundColor: "red",
-                            border: "0.2vw solid #404040",
-                            paddingLeft: "1vw",
-                            paddingRight: "1vw"
-                        }}
-                        borderRadius={16}
-                    >
-                        <Typography
-                            style={{
-                                fontSize: "1.4rem",
-                                color: "#404040",
-                                fontFamily: "Fira Sans"
-                            }}
-                        >
-                            Elite Auto Engineers Pvt. Ltd.
-                        </Typography>
-                    </Box>
+                    <img
+                        src={full}
+                        alt="logo"
+                        className={classes.sectionDesktop}
+                    />
+                    <img
+                        src={elite}
+                        alt="logo"
+                        className={classes.sectionMobile}
+                    />
                     <div className={classes.grow} />
-                    <Button style={{ color: "#404040", padding: "1vh" }}>
+                    <Button
+                        style={{ color: "#404040", padding: "1vh" }}
+                        onClick={(e) => {
+                            e.preventDefault();
+                            window.location.href = "#about";
+                        }}
+                    >
                         About
                     </Button>
-                    {/* <Button style={{ color: "#404040", padding: "1vh" }}></Button> */}
-                    <Button style={{ color: "#404040", padding: "1vh" }}>
+                    <Button
+                        style={{ color: "#404040", padding: "1vh" }}
+                        onClick={(e) => {
+                            e.preventDefault();
+                            window.location.href = "#contactus";
+                        }}
+                        variant="contained"
+                    >
                         Contact Us
                     </Button>
                 </Toolbar>

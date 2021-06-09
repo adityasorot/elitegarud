@@ -4,7 +4,7 @@ import ContactForm from "./ContactForm";
 
 const ContactBody = () => {
     return (
-        <div>
+        <div id="contactus">
             <Typography
                 variant="h3"
                 style={{

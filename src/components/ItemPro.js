@@ -6,7 +6,13 @@ const useStyles = makeStyles((theme) => ({
         backgroundImage: (props) => props.item.backgroundImage,
         backgroundSize: "contain",
         backgroundRepeat: "no-repeat",
-        height: "75vh"
+        height: "55vh",
+        [theme.breakpoints.up("sm")]: {
+            backgroundImage: (props) => props.item.backgroundImage,
+            backgroundSize: "contain",
+            backgroundRepeat: "no-repeat",
+            height: "75vh"
+        }
     },
     box: {
         backgroundColor: "black",
